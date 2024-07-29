@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EmpSkillLibrary.Models.EmpSkill>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Employee Skills</h1>
+
+<p>
+    <a asp-action="Create">Create New Employee Skill</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkillId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkillExperience)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillExperience)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new {SkillId=item.SkillId,EmpId=item.EmpId}) |
+                    @Html.ActionLink("Details", "Details", new { SkillId = item.SkillId, EmpId = item.EmpId }) |
+                    @Html.ActionLink("Delete", "Delete", new { SkillId = item.SkillId, EmpId = item.EmpId })|
+                    @Html.ActionLink("Get By Employee Id", "GetByEmpId", new { EmpId = item.EmpId })|
+                    @Html.ActionLink("Get By Skill Id", "GetBySkillId", new { SkillId = item.SkillId }) |
+                    @Html.ActionLink("Get Employee Details", "Empdetails", new { eid = item.EmpId }) |
+                    @Html.ActionLink("Get Skill Details", "Skilldetails", new { sid = item.SkillId})
+
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

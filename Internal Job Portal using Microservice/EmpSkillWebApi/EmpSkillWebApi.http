@@ -1,0 +1,6 @@
+@EmpSkillWebApi_HostAddress = http://localhost:5016
+
+GET {{EmpSkillWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

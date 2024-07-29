@@ -1,0 +1,93 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/EmpSkill/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5016
+        }
+      ],
+      "UpstreamPathTemplate": "/EmpSkillSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/EmpSkill/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5016
+        }
+      ],
+      "UpstreamPathTemplate": "/EmpSkillSvc/{everything}"
+    },
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/JobPost/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5244
+        }
+      ],
+      "UpstreamPathTemplate": "/JobPostSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/JobPost/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5244
+        }
+      ],
+      "UpstreamPathTemplate": "/JobPostSvc/{everything}"
+    },
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/ApplyJob/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5059
+        }
+      ],
+      "UpstreamPathTemplate": "/ApplyJobSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/ApplyJob/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5059
+        }
+      ],
+      "UpstreamPathTemplate": "/ApplyJobSvc/{everything}"
+    },
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/Auth",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5252
+        }
+      ],
+      "UpstreamPathTemplate": "/AuthSvc"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5160"
+  }
+}

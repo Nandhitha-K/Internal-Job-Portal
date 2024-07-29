@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ApplyJobLibrary.Models.ApplyJob>
+
+@{
+    ViewData["Title"] = "GetDetailsByAppliedDate";
+}
+
+<h1>Get Details By Applied Date</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PostId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppliedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppliedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationStatus)
+            </td>
+           
+        </tr>
+}
+        <a asp-action="Index">Back to List</a>
+    </tbody>
+</table>
